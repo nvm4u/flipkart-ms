@@ -35,7 +35,7 @@ pipeline {
         stage('Building & Tag Docker Image') {
             steps {
                 echo 'Starting Building Docker Image'
-                sh "docker build -t nvm4u/flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER} ."
+                sh "docker build -t nitu4u/flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER} ."
                 sh "docker build -t flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER} ."
                 echo 'Completed Building Docker Image'
             }
@@ -51,9 +51,9 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]) {
-                        sh "docker login docker.io -u nvm4u -p ${dockerhubCred}"
+                        sh "docker login docker.io -u nitu4u -p ${dockerhubCred}"
                         echo "Push Docker Image to DockerHub: In Progress"
-                        sh "docker push nvm4u/flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER}"
+                        sh "docker push nitu4u/flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER}"
                         echo "Push Docker Image to DockerHub: Completed"
                     }
                 }
