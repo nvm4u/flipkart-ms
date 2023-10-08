@@ -67,7 +67,7 @@ pipeline {
                         docker tag flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER} 744018057756.dkr.ecr.ap-south-1.amazonaws.com/flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER}
                         echo "Tagging the Docker Image: Completed"
                         echo "Push Docker Image to ECR: In Progress"
-                        docker push 559220132560.dkr.ecr.ap-south-1.amazonaws.com/flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER}
+                        docker push 744018057756.dkr.ecr.ap-south-1.amazonaws.com/flipkart-ms:dev-flipkart-ms-v1.${BUILD_NUMBER}
                         echo "Push Docker Image to ECR: Completed"
                         """
                     }
